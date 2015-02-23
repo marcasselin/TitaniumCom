@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A610F79-8994-4CD3-849D-79416F636C2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carbon.Commerce</RootNamespace>
+    <AssemblyName>Carbon.Commerce</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Carbon.Core">
+      <HintPath>..\..\lib\Carbon.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\CreditCardHelper.cs" />
+    <Compile Include="Billing\BillingCycle.cs" />
+    <Compile Include="Billing\BillingInfo.cs" />
+    <Compile Include="Models\ICurrency.cs" />
+    <Compile Include="Models\CurrencyCode.cs" />
+    <Compile Include="Models\IAccount.cs" />
+    <Compile Include="Orders\OrderState.cs" />
+    <Compile Include="Payments\Models\CreditCardType.cs" />
+    <Compile Include="Payments\Models\CreditCardStatus.cs" />
+    <Compile Include="Payments\Models\ICreditCard.cs" />
+    <Compile Include="Payments\Models\IPaymentMethod.cs" />
+    <Compile Include="Payments\Models\AvsResult.cs" />
+    <Compile Include="Payments\Models\CreditCardDeclineReason.cs" />
+    <Compile Include="Payments\Models\CvvResult.cs" />
+    <Compile Include="Payments\Models\IRecurringPayment.cs" />
+    <Compile Include="Payments\Exceptions\ProcessingException.cs" />
+    <Compile Include="Shipping\Models\IShippingRestriction.cs" />
+    <Compile Include="Shipping\Models\PackageStatus.cs" />
+    <Compile Include="Shipping\Models\IShippingMethod.cs" />
+    <Compile Include="Shipping\Models\ShippingQuote.cs" />
+    <Compile Include="Transactions\PaymentAction.cs" />
+    <Compile Include="Payments\Models\PaymentProcessorType.cs" />
+    <Compile Include="Payments\Models\PaymentMethodFeatures.cs" />
+    <Compile Include="Payments\Models\RecurringPaymentInfo.cs" />
+    <Compile Include="Models\ReversalReason.cs" />
+    <Compile Include="Orders\IInvoice.cs" />
+    <Compile Include="Orders\ISalesLine.cs" />
+    <Compile Include="Orders\InvoiceStatus.cs" />
+    <Compile Include="Orders\IOrder.cs" />
+    <Compile Include="Orders\IPurchaseOrder.cs" />
+    <Compile Include="Orders\ISalesDocument.cs" />
+    <Compile Include="Orders\ISalesOrder.cs" />
+    <Compile Include="Orders\LineItemType.cs" />
+    <Compile Include="Shipping\Models\IPackage.cs" />
+    <Compile Include="Shipping\Models\ShippingCarrier.cs" />
+    <Compile Include="Transactions\CreditCardTransaction.cs" />
+    <Compile Include="Transactions\IMonetaryTransaction.cs" />
+    <Compile Include="Transactions\MonetaryTransactionFailureReason.cs" />
+    <Compile Include="Transactions\MonetaryTransactionState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Payments\IPaymentProcessor.cs" />
+    <Compile Include="Payments\Models\PaymentMethodVerification.cs" />
+    <Compile Include="Payments\PaymentProcessorFactory.cs" />
+    <Compile Include="Shipping\Services\IShippingService.cs" />
+    <Compile Include="Validation\CreditCardNumberAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
